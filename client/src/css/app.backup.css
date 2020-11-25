@@ -16,7 +16,7 @@
     word-wrap: break-word;
 }
 .song-genre {
-    max-width: 100px;
+    max-width: 150px;
     word-wrap: break-word;
 }
 .song-artist, .song-title {
@@ -25,7 +25,7 @@
 }
 
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 7px;
   }
   
   ::-webkit-scrollbar-track {
