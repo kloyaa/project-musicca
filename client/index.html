@@ -208,7 +208,7 @@
         var initRoot = new Vue({
             el: '#root',
             data: {
-                baseURL: "http://localhost:8085/",
+                baseURL: "http://www.song-api-2020.somee.com/",
                 songs: [],
                 tableHeader: ['Music #ID', 'Title', 'Artist', 'Song writer', 'Genre', 'Released'],
                 keyword: "",
@@ -230,7 +230,7 @@
                         .catch(err => console.log(err.data));
                 },
                 postNewSong: async function(){
-                        await axios.post(this.baseURL + "api/song/create", this.populateFieldsOnEdit)
+                    await axios.post(this.baseURL + "api/song/create", this.populateFieldsOnEdit)
                         .then(res => {
                             this.loadSongs();
                             this.populateFieldsOnEdit = { ...null };
