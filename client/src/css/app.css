@@ -15,6 +15,10 @@
     max-width: 10px;
     word-wrap: break-word;
 }
+.song-genre {
+    max-width: 10px;
+    word-wrap: break-word;
+}
 #snackbar, #snackbarAdded, #snackbarUpdated {
     z-index: 999999999999;
     visibility: hidden;
