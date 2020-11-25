@@ -185,11 +185,18 @@
                             </tr>
                         </tbody>
                     </table>
-                    <h3 class="font-weight-light text-center mt-5">{{songs.length}}
-                        <span v-if="songs.length > 1">songs</span>
-                        <span v-else>song</span>
-                        <span>found in search result</span>
-                    </h3>
+                    <div v-if="songs.length">
+                        <h3 class="font-weight-light text-center mt-5">{{songs.length}}
+                            <span v-if="songs.length > 1">songs</span>
+                            <span v-else>song</span>
+                            <span>found in search result</span>
+                        </h3>
+                    </div>
+                    <div v-else>
+                        <h3 class="font-weight-light text-center mt-5">No search results found
+                    
+                        </h3>
+                    </div>
                 </div>
             </div>
         </div>
@@ -259,7 +266,8 @@
                     if (!(this.keyword === this.keyword && this.keyword % 1 !== 0)) {
                         return await axios.get(this.baseURL + `api/song/find/${this.keyword}`)
                             .then(res => this.songs = [res.data])
-                            .catch(() => console.error("Song Id not found"))
+                            .catch(() =>  this.songs = { ...null });
+                          
                     }
                     // if keyword is not a typeof number
                     if (isNaN(this.keyword) && this.keyword != null || this.keyword != "") {
